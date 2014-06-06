@@ -1,0 +1,21 @@
+#wrapper {
+    background-image: url('front_page_bg.png');
+    width: 800px;
+    height: 600px;
+}
+button {
+    position: relative;
+    top: 370px;
+    left: 37px;
+    width: 310px;
+    height: 75px;
+    background-color: #004a4d;
+    border: none;
+    font-family: arial;
+    font-size: 26px;
+    font-weight: bold;
+    color: #ff9840;
+}
+button:hover {
+    border: 2px solid #ff9840;
+}
