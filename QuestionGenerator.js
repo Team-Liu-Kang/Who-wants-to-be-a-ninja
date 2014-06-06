@@ -70,7 +70,7 @@
     };
 
     return {
-        getQuestion: getQuestions,
+        getQuestions: getQuestions,
     }
 
 };
