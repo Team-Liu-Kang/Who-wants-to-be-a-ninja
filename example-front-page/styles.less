@@ -1,0 +1,53 @@
+div,
+a,
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+// Colors
+@orange: #ff9840;
+@dark-blue: #004a4d;
+
+#wrapper {
+    background-image: url('front_page_bg.png');
+    width: 800px;
+    height: 600px;
+    font-family: arial;
+    margin: 20px auto;
+    
+    #start-screen {
+        .start-button {           
+            position: relative;
+            top: 370px;
+            left: 37px;
+            width: 310px;
+            height: 75px;
+            border: none;
+            font-family: arial;
+            font-size: 26px;
+            font-weight: bold;
+            color: @orange;
+            margin-bottom: 15px;
+            
+            background-color: @dark-blue;
+              -o-transition:.5s;
+              -ms-transition:.5s;
+              -moz-transition:.5s;
+              -webkit-transition:.5s;
+              transition:.2s;
+            
+            &:hover {
+                border: 2px solid @dark-blue;
+                background-color: @orange;
+                color:@dark-blue;
+            }
+        }
+    }
+}
+
+
+button:hover {
+    border: 2px solid #ff9840;
+}
