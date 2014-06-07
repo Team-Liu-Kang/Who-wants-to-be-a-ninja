@@ -9,13 +9,28 @@ body {
 html {
   overflow: hidden;
 }
+#container{
+  width: 800px;
+  height: 600px;
+  margin: 20px auto;
+  border: 5px solid #004a4d;
+  z-index:1;
+  background-color:#004a4d;
+  position:absolute;
+  top:10px;
+  left:10px;
+}
 #wrapper {
+z-index:2;
   background-image: url('images/front_page_bg.png');
   width: 800px;
   height: 600px;
   font-family: arial;
   margin: 20px auto;
   border: 5px solid #004a4d;
+    position:absolute;
+  top:10px;
+  left:10px;
 }
 #wrapper #start-screen {
   width: 800px;

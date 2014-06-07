@@ -1,17 +1,6 @@
-﻿/// <reference path="C:\Users\Nikki\Desktop\Telerik\Ilian\JavaScriptUIAndDOM\JSTeamWork\JSTeamWork\QuestionGenerator.js" />
-(function () {
-
-    var WIDTH = 800,
-        HEIGHT = 600,
-        containerID = 'container';
-
-    var stage = new Kinetic.Stage({
-        container: containerID,
-        width: WIDTH,
-        height: HEIGHT
-    });
-
-    function drawRightPanel(x, y, width, height, rows, startPoints, selectedRow, stage) {
+﻿var KineticRender = function (stage) {
+    var stage = stage;
+    var drawRightPanel = function (x, y, width, height, rows, startPoints, selectedRow, stage) {
         var singleRowHeight = height / rows,
             topRowPoints = rows * startPoints,
             nonSelectedTextColor = 'lightblue',
@@ -22,17 +11,18 @@
             specialTextColor = 'orange';
 
         for (var i = 0; i < rows; i++) {
+            rows = rows | 0;
             if (selectedRow === rows - i) {
-                drawRightPanelRow(x, y + (singleRowHeight * i), width, singleRowHeight, rows - i, topRowPoints - (i * startPoints), 30, selectedTextColor, selectedBacgroundColor, borderColor, stage);
+                drawRightPanelRow(x, y + (singleRowHeight * i), width, singleRowHeight, rows - i, topRowPoints - (i * startPoints), 30, selectedTextColor, selectedBacgroundColor, borderColor);
             } else if (i === rows - 1 || i === Math.floor((rows - 1) / 2) || i === 0) {
-                drawRightPanelRow(x, y + (singleRowHeight * i), width, singleRowHeight, rows - i, topRowPoints - (i * startPoints), 30, specialTextColor, nonSelectedBackgroundColor, borderColor, stage);
+                drawRightPanelRow(x, y + (singleRowHeight * i), width, singleRowHeight, rows - i, topRowPoints - (i * startPoints), 30, specialTextColor, nonSelectedBackgroundColor, borderColor);
             } else {
-                drawRightPanelRow(x, y + (singleRowHeight * i), width, singleRowHeight, rows - i, topRowPoints - (i * startPoints), 30, nonSelectedTextColor, nonSelectedBackgroundColor, borderColor, stage);
+                drawRightPanelRow(x, y + (singleRowHeight * i), width, singleRowHeight, rows - i, topRowPoints - (i * startPoints), 30, nonSelectedTextColor, nonSelectedBackgroundColor, borderColor);
             }
         }
     }
 
-    function drawRightPanelRow(x, y, width, height, rowNumber, rowPoints, fontSize, textColor, backgroundColor, borderColor, stage) {
+    var drawRightPanelRow = function (x, y, width, height, rowNumber, rowPoints, fontSize, textColor, backgroundColor, borderColor) {
         var backgroundRectangle = new Kinetic.Rect({
             x: x,
             y: y,
@@ -59,7 +49,7 @@
             fill: textColor,
             width: leftRectangle.width() - 20,
             height: leftRectangle.height() - 20,
-            padding: 10,
+            padding: 5,
             align: 'center'
         });
 
@@ -73,7 +63,7 @@
 
         var rightTextField = new Kinetic.Text({
             x: rightRectangle.x(),
-            y: rightRectangle.y() - 5,
+            y: rightRectangle.y() - 10,
             text: rowPoints,
             fontSize: fontSize,
             fontFamily: 'Calibri',
@@ -90,7 +80,7 @@
         stage.add(layer);
     }
 
-    function drawAnswersBox(x, y, width, height, arrOfStrings, onClickFunc, stage) {
+    var drawAnswersBox = function (x, y, width, height, arrOfStrings, onClickFunc) {
         var singleAnswerWidth = (width / 2) - 20,
             singleAnswerHeight = (height / 2) - 20,
             maxStrLength = 0,
@@ -117,13 +107,14 @@
         for (var i = 0; i < 2; i++) {
 
             for (var k = 0; k < 2; k++) {
-                drawAnswer(x + ((singleAnswerWidth + 10) * i), y + ((singleAnswerHeight + 10) * k), singleAnswerWidth, singleAnswerHeight, arrOfStrings[index], fontSize, onClickFunc, stage);
+                drawAnswer(x + ((singleAnswerWidth + 10) * i), y + ((singleAnswerHeight + 10) * k), singleAnswerWidth, singleAnswerHeight, arrOfStrings[index], fontSize, onClickFunc
+                    );
                 index++;
             }
         }
     }
 
-    function drawAnswer(x, y, width, height, text, fontSize, onClickFunc, stage) {
+    var drawAnswer = function (x, y, width, height, text, fontSize, onClickFunc) {
 
         var rectangle = new Kinetic.Rect({
             x: x,
@@ -180,7 +171,8 @@
         stage.add(layer);
     }
 
-    function run() {
-
+    return {
+        drawRightPanel: drawRightPanel,
+        drawAnswersBox: drawAnswersBox,
     }
-})();
+}

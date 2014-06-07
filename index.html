@@ -1,13 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <title>Ninja Quiz</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="Scripts/jquery-2.1.1.js"></script>
+    <script src="Scripts/kinetic-v5.1.0.min.js"></script>
 </head>
 
 <body>
+<div id="container"></div>
     <div id="wrapper">
         <div id="start-screen">
             <button id="new-game-button" class="start-button">New Game</button>
@@ -18,7 +21,14 @@
         </div>
         <div id="leaderboard-screen">Not Implemented</div>
     </div>
-    <script src="start-screen-events.js"></script>
+    <script src="KineticRender.js"></script>
+    <script src="QuestionGenerator.js"></script>
+    <script src="GameEngine.js"></script>
+    <script>
+        var gameEngine = new GameEngine();
+        gameEngine.drawCurrentAnswer();
+    </script>
+    <script src="Events.js"></script>
 </body>
 
 </html>
