@@ -6,12 +6,20 @@ body {
   margin: 0;
   padding: 0;
 }
+html {
+  overflow: hidden;
+}
 #wrapper {
-  background-image: url('front_page_bg.png');
+  background-image: url('images/front_page_bg.png');
   width: 800px;
   height: 600px;
   font-family: arial;
   margin: 20px auto;
+  border: 5px solid #004a4d;
+}
+#wrapper #start-screen {
+  width: 800px;
+  height: 600px;
 }
 #wrapper #start-screen .start-button {
   position: relative;
@@ -37,6 +45,13 @@ body {
   background-color: #ff9840;
   color: #004a4d;
 }
-button:hover {
-  border: 2px solid #ff9840;
+#wrapper #game-screen {
+  width: 800px;
+  height: 600px;
+  display: none;
+}
+#wrapper #leaderboard-screen {
+  width: 800px;
+  height: 600px;
+  display: none;
 }
