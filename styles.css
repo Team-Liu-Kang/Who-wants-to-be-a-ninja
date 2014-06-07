@@ -15,7 +15,7 @@ html {
   margin: 10px auto;
   border: 5px solid #004a4d;
   z-index:1;
-  background-color:#004a4d;
+  background-image: url('images/front_page_bg.png');
   position:absolute;
   top:10px;
   left:10px;

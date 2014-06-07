@@ -94,13 +94,13 @@
         }
 
         if (maxStrLength < 10) {
-            fontSize = 25;
+            fontSize = 30;
         } else if (maxStrLength < 15) {
-            fontSize = 20;
+            fontSize = 25;
         } else if (maxStrLength < 20) {
-            fontSize = 18;
+            fontSize = 20;
         } else if (maxStrLength < 30) {
-            fontSize = 15;
+            fontSize = 18;
         }
 
         var index = 0;

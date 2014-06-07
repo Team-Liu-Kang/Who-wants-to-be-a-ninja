@@ -22,7 +22,7 @@
         arrayWithAnswer.push(question.answerC);
         arrayWithAnswer.push(question.answerD);
         kineticRender.drawRightPanel(600, 40, 200, 560, 15, 100, questionNumber);
-        kineticRender.drawAnswersBox(10, 370, 600, 250, arrayWithAnswer, function () { });
+        kineticRender.drawAnswersBox(10, 470, 600, 150, arrayWithAnswer, function () { });
     }
     return {
         drawCurrentAnswer: drawCurrentAnswer,
