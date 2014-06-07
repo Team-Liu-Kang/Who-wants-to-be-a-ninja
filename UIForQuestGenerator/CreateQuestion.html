@@ -1,59 +1,97 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <title>Create Question</title>
-    <script src="../Scripts/jquery-2.1.1.js"></script>
-    <style>
-        textarea{
-            width:300px;
-            height:70px;
-        }
-    </style>
+    <script src="Scripts/jquery-2.1.1.js"></script>
+    <link rel="stylesheet" href="Styles/styles.css" />
 </head>
+
 <body>
-    <div>
-        <label>Question</label>
-        <textarea id="question"></textarea>
+    <div id="wrapper">
+        <table>
+            <tr>
+                <td>
+                    <label class="question">Question</label>
+                </td>
+                <td>
+                    <textarea id="question"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="answer">Answer A</label>
+                </td>
+                <td>
+                    <textarea id="answerA"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="answer">Answer B</label>
+                </td>
+                <td>
+                    <textarea id="answerB"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="answer">Answer C</label>
+                </td>
+                <td>
+                    <textarea id="answerC"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="answer">Answer D</label>
+                </td>
+                <td>
+                    <textarea id="answerD"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="description">Description</label>
+                </td>
+                <td>
+                    <textarea id="description"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Difficulty</label>
+                </td>
+                <td>
+                    <select id="diff">
+                        <option value="1">Easy</option>
+                        <option value="2">Normal</option>
+                        <option value="3">Hard</option>
+                        <option value="4">Tip zadachi na ivaylo po JS1</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Correct Answer:</label>
+                </td>
+                <td>
+                    <select id="correct-answer">
+                        <option value="A">Answer A</option>
+                        <option value="B">Answer B</option>
+                        <option value="C">Answer C</option>
+                        <option value="D">Answer D</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button id="create-btn">Add the question to the database</button>
+                </td>
+            </tr>
+            <script src="CreateFile.js"></script>
+        </table>
     </div>
-    <div>
-        <label>Answer A</label>
-        <textarea id="answerA"></textarea>
-    </div>
-    <div>
-        <label>Answer B</label>
-        <textarea id="answerB"></textarea>
-    </div>
-    <div>
-        <label>Answer C</label>
-        <textarea id="answerC"></textarea>
-    </div>
-    <div>
-        <label>Answer D</label>
-        <textarea id="answerD"></textarea>
-    </div>
-	    <div>
-        <label>Description</label>
-        <textarea id="description"></textarea>
-    </div>
-    <div>
-        <label>Difficulty</label>
-        <select id="diff">
-            <option value="1">Easy</option>
-            <option value="2">Normal</option>
-            <option value="3">Hard</option>
-            <option value="4">Tip zadachi na ivaylo po JS1</option>
-        </select>
-    </div>
-    <div>
-        <label>Correct Answer:</label>
-        <select id="correct-answer">
-            <option value="A">Answer A</option>
-            <option value="B">Answer B</option>
-            <option value="C">Answer C</option>
-            <option value="D">Answer D</option>
-        </select>
-    </div>
-    <button id="create-btn">Create</button>
-    <script src="CreateFile.js"></script>
 </body>
+
 </html>
