@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Create Question</title>
+    <script src="../Scripts/jquery-2.1.1.js"></script>
+    <style>
+        textarea{
+            width:300px;
+            height:70px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label>Question</label>
+        <textarea id="question"></textarea>
+    </div>
+    <div>
+        <label>Answer A</label>
+        <textarea id="answerA"></textarea>
+    </div>
+    <div>
+        <label>Answer B</label>
+        <textarea id="answerB"></textarea>
+    </div>
+    <div>
+        <label>Answer C</label>
+        <textarea id="answerC"></textarea>
+    </div>
+    <div>
+        <label>Answer D</label>
+        <textarea id="answerD"></textarea>
+    </div>
+	    <div>
+        <label>Description</label>
+        <textarea id="description"></textarea>
+    </div>
+    <div>
+        <label>Difficulty</label>
+        <select id="diff">
+            <option value="1">Easy</option>
+            <option value="2">Normal</option>
+            <option value="3">Hard</option>
+            <option value="4">Tip zadachi na ivaylo po JS1</option>
+        </select>
+    </div>
+    <div>
+        <label>Correct Answer:</label>
+        <select id="correct-answer">
+            <option value="A">Answer A</option>
+            <option value="B">Answer B</option>
+            <option value="C">Answer C</option>
+            <option value="D">Answer D</option>
+        </select>
+    </div>
+    <button id="create-btn">Create</button>
+    <script src="CreateFile.js"></script>
+</body>
+</html>
