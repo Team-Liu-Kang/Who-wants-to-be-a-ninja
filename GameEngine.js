@@ -11,8 +11,9 @@
 
     var generator = new QuestionGeneration();
     var arrWithQuestions = generator.getQuestions();
+    console.log(" " + arrWithQuestions.length);
     var kineticRender = new KineticRender(stage);
-    var questionNumber = 1;
+    var questionNumber = 0;
     var question = arrWithQuestions[questionNumber];
 
     function drawCurrentAnswer() {
@@ -21,10 +22,16 @@
         arrayWithAnswer.push(question.answerB);
         arrayWithAnswer.push(question.answerC);
         arrayWithAnswer.push(question.answerD);
-        kineticRender.drawRightPanel(600, 40, 200, 560, 15, 100, questionNumber);
+        kineticRender.drawRightPanel(600, 40, 200, 560, 15, 100, questionNumber+1);
         kineticRender.drawAnswersBox(10, 470, 600, 150, arrayWithAnswer, function () { });
+        questionNumber++;
+        question = arrWithQuestions[questionNumber];
+    }
+
+    function nextQuestion() {
+        drawCurrentAnswer();
     }
     return {
-        drawCurrentAnswer: drawCurrentAnswer,
+        nextQuestion: nextQuestion,
     }
 }
