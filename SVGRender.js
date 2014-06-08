@@ -1,7 +1,7 @@
-﻿var SvgRender = function () {
-    var paper = Raphael(80, 370, 500, 100);
-    var progressLevel, progressBar;
+﻿var SvgRender = function () { 
+    var progressLevel, progressBar,paper;
     var startProgressBar = function (callback) {
+        paper = Raphael(80, 370, 500, 100);
         progressBar = paper.rect(30, 50, 399, 50, 5);
         paper.setStart();
         var zero = paper.text(30, 40, '0');
