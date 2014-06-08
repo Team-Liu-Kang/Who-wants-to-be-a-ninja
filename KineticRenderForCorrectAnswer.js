@@ -121,7 +121,7 @@
         var incorectAnswerDescriptionText = new Kinetic.Text({
             x: 150,
             y: 240,
-            text: incorrectAnswerDescription,
+            text: strIncorrectAnswerDescription,
             fontSize: 20,
             fontFamily: 'Calibri',
             width: 500,
