@@ -23,7 +23,6 @@
     var question = arrWithQuestions[questionNumber];
     var svgRender = new SvgRender();
     var drawCurrentAnswer = function () {
-        svgRender = new SvgRender();
         svgRender.startProgressBar(whenAnswerIsChoosen);
         var arrayWithAnswer = [];
         arrayWithAnswer.push(question.answerA);
@@ -36,12 +35,12 @@
 
     var whenAnswerIsChoosen = function (rectID) {
         if (rectID == question.correctAnswer) {
-            kineticForCorrectAnswer.correctAnswer();
+            kineticForCorrectAnswer.correctAnswer(question.description);
             questionNumber++;
             question = arrWithQuestions[questionNumber];
             svgRender.clearPaper();
         } else {
-            kineticForCorrectAnswer.incorrectAnswer();
+            kineticForCorrectAnswer.incorrectAnswer(question.description);
             svgRender.clearPaper();
         }
     }

@@ -2,7 +2,8 @@
     var stage = stage;
     var layer = new Kinetic.Layer();
     var correctAnswer = function (strCorrectAnswerDescription) {
-        $('#container').fadeOut(1500);
+        layer.clear();
+        $('#container').fadeOut(1000);
 
         if (strCorrectAnswerDescription === undefined) {
             strCorrectAnswerDescription = 'Congratulations, you answer correctly.';
@@ -16,7 +17,7 @@
             fill: '#00FF33',
             stroke: 'darkgreen',
             strokeWidth: 2,
-            opacity: 0.8
+            opacity: 1
         });
 
         var corectAnswerText = new Kinetic.Text({
@@ -73,7 +74,7 @@
 
         nextQuestionInvisible.on('click', function () {
             gameEngine.nextQuestion();
-            $('#container').fadeIn(1500);
+            $('#container').fadeIn(1000);
         })
         nextQuestionInvisible.on('mouseover', function () {
             nextQuestion.fill('black');
@@ -89,6 +90,7 @@
     };
 
     var incorrectAnswer = function (strIncorrectAnswerDescription) {
+        layer.clear();
         if (strIncorrectAnswerDescription === undefined) {
             strIncorrectAnswerDescription = 'You may have more luck next time.';
         }
@@ -104,7 +106,7 @@
             stroke: 'red',
             strokeWidth: 2,
             align: 'center',
-            opacity: 0.8
+            opacity: 1
         });
 
         var incorectAnswerText = new Kinetic.Text({
