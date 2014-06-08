@@ -5,7 +5,7 @@
     var stage = new Kinetic.Stage({
         container: 'container',
         width: WIDTH,
-        height: HEIGHT
+        height: HEIGHT,
     });
 
     var stageForCorrectAnswer = new Kinetic.Stage({
@@ -21,8 +21,10 @@
     var kineticRender = new KineticRender(stage);
     var questionNumber = 0;
     var question = arrWithQuestions[questionNumber];
-
-    var drawCurrentAnswer =function() {
+    var svgRender = new SvgRender();
+    var drawCurrentAnswer = function () {
+        svgRender = new SvgRender();
+        svgRender.startProgressBar(whenAnswerIsChoosen);
         var arrayWithAnswer = [];
         arrayWithAnswer.push(question.answerA);
         arrayWithAnswer.push(question.answerB);
@@ -37,8 +39,10 @@
             kineticForCorrectAnswer.correctAnswer();
             questionNumber++;
             question = arrWithQuestions[questionNumber];
+            svgRender.clearPaper();
         } else {
             kineticForCorrectAnswer.incorrectAnswer();
+            svgRender.clearPaper();
         }
     }
 

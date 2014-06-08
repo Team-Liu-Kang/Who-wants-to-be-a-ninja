@@ -9,6 +9,10 @@ body {
 html {
   overflow: hidden;
 }
+
+svg{
+    z-index:2;
+}
 div.canvas-div{
   width: 800px;
   height: 600px;
