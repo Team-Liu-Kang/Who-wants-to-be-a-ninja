@@ -10,7 +10,8 @@
 </head>
 
 <body>
-<div id="container"></div>
+<div id="container" class="canvas-div"></div>
+<div id="answer-state" class="canvas-div"></div>
     <div id="wrapper">
         <div id="start-screen">
             <button id="new-game-button" class="start-button">New Game</button>
@@ -23,10 +24,10 @@
     </div>
     <script src="KineticRender.js"></script>
     <script src="QuestionGenerator.js"></script>
+    <script src="KineticRenderForCorrectAnswer.js"></script>
     <script src="GameEngine.js"></script>
     <script>
         var gameEngine = new GameEngine();
-        
     </script>
     <script src="Events.js"></script>
 </body>

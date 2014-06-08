@@ -115,14 +115,13 @@ var KineticRender = function (stage) {
         for (var i = 0; i < 2; i++) {
 
             for (var k = 0; k < 2; k++) {
-                drawAnswer(x + ((singleAnswerWidth + 10) * i), y + ((singleAnswerHeight + 10) * k), singleAnswerWidth, singleAnswerHeight, arrOfStrings[index], fontSize, onClickFunc
-                    );
+                drawAnswer(x + ((singleAnswerWidth + 10) * i), y + ((singleAnswerHeight + 10) * k), singleAnswerWidth, singleAnswerHeight, arrOfStrings[index], fontSize, index+1,  onClickFunc);
                 index++;
             }
         }
     }
 
-    var drawAnswer = function (x, y, width, height, text, fontSize, onClickFunc) {
+    var drawAnswer = function (x, y, width, height, text, fontSize, rectID , onClickFunc) {
 
         var rectangle = new Kinetic.Rect({
             x: x,
@@ -153,6 +152,7 @@ var KineticRender = function (stage) {
             y: y,
             width: width,
             height: height,
+            id: rectID,
             opacity: 0,
         });
 
@@ -161,7 +161,7 @@ var KineticRender = function (stage) {
             rectangleContainer.off('mouseover');
             rectangleContainer.off('mouseout');
             layer.draw();
-            onClickFunc();
+            onClickFunc(rectangleContainer.id());
         });
 
         rectangleContainer.on('mouseover', function () {

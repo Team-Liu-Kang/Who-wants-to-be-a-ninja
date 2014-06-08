@@ -9,7 +9,7 @@ body {
 html {
   overflow: hidden;
 }
-#container{
+div.canvas-div{
   width: 800px;
   height: 600px;
   margin: 10px auto;
@@ -20,8 +20,14 @@ html {
   top:10px;
   left:10px;
 }
+#container{
+    z-index:2;
+}
+#answer-state{
+    z-index:1;
+}
 #wrapper {
-z-index:2;
+z-index:3;
   background-image: url('images/front_page_bg.png');
   width: 800px;
   height: 600px;

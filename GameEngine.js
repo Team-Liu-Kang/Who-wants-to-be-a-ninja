@@ -1,34 +1,48 @@
 ﻿var GameEngine = function () {
     var WIDTH = 800,
-        HEIGHT = 600,
-        containerID = 'container';
+        HEIGHT = 600;
 
     var stage = new Kinetic.Stage({
-        container: containerID,
+        container: 'container',
         width: WIDTH,
         height: HEIGHT
     });
 
+    var stageForCorrectAnswer = new Kinetic.Stage({
+        container: 'answer-state',
+        width: WIDTH,
+        height: HEIGHT
+    });
+    
+    var kineticForCorrectAnswer = new KineticRenderForCorrectAnswer(stageForCorrectAnswer);
     var generator = new QuestionGeneration();
     var arrWithQuestions = generator.getQuestions();
-    console.log(" " + arrWithQuestions.length);
+    console.log(arrWithQuestions[0].question);
     var kineticRender = new KineticRender(stage);
     var questionNumber = 0;
     var question = arrWithQuestions[questionNumber];
 
-    function drawCurrentAnswer() {
+    var drawCurrentAnswer =function() {
         var arrayWithAnswer = [];
         arrayWithAnswer.push(question.answerA);
         arrayWithAnswer.push(question.answerB);
         arrayWithAnswer.push(question.answerC);
         arrayWithAnswer.push(question.answerD);
         kineticRender.drawRightPanel(600, 40, 200, 560, 15, 100, questionNumber+1);
-        kineticRender.drawAnswersBox(10, 470, 600, 150, arrayWithAnswer, function () { });
-        questionNumber++;
-        question = arrWithQuestions[questionNumber];
+        kineticRender.drawAnswersBox(10, 470, 600, 150, arrayWithAnswer, whenAnswerIsChoosen);
     }
 
-    function nextQuestion() {
+    var whenAnswerIsChoosen = function (rectID) {
+        if (rectID == question.correctAnswer) {
+            kineticForCorrectAnswer.correctAnswer();
+            questionNumber++;
+            question = arrWithQuestions[questionNumber];
+        } else {
+            kineticForCorrectAnswer.incorrectAnswer();
+        }
+    }
+
+    var nextQuestion= function() {
         drawCurrentAnswer();
     }
     return {
