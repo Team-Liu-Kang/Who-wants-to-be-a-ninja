@@ -2,6 +2,45 @@
 var KineticRender = function (stage) {
     var stage = stage;
     var layer = new Kinetic.Layer();
+
+    var drawQuestionBox = function (x, y, width, height, strQuestion) {
+        if (strQuestion === undefined) {
+            strQuestion = 'Some question?'
+        }
+
+        var bgColor = '#1D7074',
+            textColor = 'fff',
+            fontsize = '24',
+            borderColor = '#004A4D',
+            layer = new Kinetic.Layer();
+
+        var questionRect = new Kinetic.Rect({
+            x: x,
+            y: y,
+            width: width,
+            height: height,
+            fill: bgColor,
+            stroke: borderColor,
+            cornerRadius: 5
+        });
+
+        var questionText = new Kinetic.Text({
+            x: x,
+            y: y + height / 2 - 40,
+            align: 'center',
+            fill: textColor,
+            width: width - 20,
+            height: height - 20,
+            padding: 10,
+            text: strQuestion,
+            fontSize: fontsize,
+            strokeWidth: 2,
+        });
+
+        layer.add(questionRect, questionText);
+        stage.add(layer);
+    }
+
     var drawRightPanel = function (x, y, width, height, rows, startPoints, selectedRow) {
         var singleRowHeight = height / rows,
             topRowPoints = rows * startPoints,
@@ -186,5 +225,6 @@ var KineticRender = function (stage) {
     return {
         drawRightPanel: drawRightPanel,
         drawAnswersBox: drawAnswersBox,
+        drawQuestionBox: drawQuestionBox
     }
 }

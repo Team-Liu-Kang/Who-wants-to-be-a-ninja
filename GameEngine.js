@@ -31,6 +31,8 @@
         arrayWithAnswer.push(question.answerD);
         kineticRender.drawRightPanel(600, 40, 200, 560, 15, 100, questionNumber+1);
         kineticRender.drawAnswersBox(10, 470, 600, 150, arrayWithAnswer, whenAnswerIsChoosen);
+        //debugger;
+        kineticRender.drawQuestionBox(20, 120, 560, 230, arrWithQuestions[0].question);
     }
 
     var whenAnswerIsChoosen = function (rectID) {
