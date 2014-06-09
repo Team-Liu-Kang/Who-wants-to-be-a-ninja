@@ -57,7 +57,7 @@
             score = playerArr[i].score;
             listItem = document.createElement('li');
             
-            listItem.innerHTML = position + '. ' + name + ' ' + score;
+            listItem.innerHTML = position + '. ' + name + ' - ' + score;
             list.appendChild(listItem);
         }
         

@@ -28,6 +28,25 @@ div.canvas-div{
 z-index:4;
 display: none;
 }
+
+#leaderboard-screen ul {
+    list-style-type: none;
+    position: relative;
+    top: 130px;
+    color: #004a4d;
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+    font-family: Arial;
+}
+
+#leaderboard-screen ul li {
+    margin-bottom: 10px;
+    margin-right: 40px;
+    border: 3px solid #004a4d;
+    background-color: #ff9840;
+}
+
 #container{
     z-index:2;
 }
