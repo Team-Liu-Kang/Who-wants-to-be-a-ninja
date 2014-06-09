@@ -30,6 +30,10 @@ div.canvas-div{
 #answer-state{
     z-index:1;
 }
+#leaderboard{
+    z-index:4;
+	display:none;
+}
 #wrapper {
 z-index:3;
   background-image: url('images/front_page_bg.png');
