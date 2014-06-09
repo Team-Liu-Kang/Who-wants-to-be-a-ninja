@@ -1,4 +1,4 @@
-﻿/// <reference path="C:\Users\Nikki\Desktop\Telerik\Ilian\JavaScriptUIAndDOM\JSTeamWork\JSTeamWork\Scripts/kinetic-v5.1.0.min.js" />
+/// <reference path="C:\Users\Nikki\Desktop\Telerik\Ilian\JavaScriptUIAndDOM\JSTeamWork\JSTeamWork\Scripts/kinetic-v5.1.0.min.js" />
 var KineticRender = function (stage) {
     var stage = stage;
     var layer = new Kinetic.Layer();
@@ -8,10 +8,10 @@ var KineticRender = function (stage) {
             strQuestion = 'Some question?'
         }
 
-        var bgColor = '#1D7074',
-            textColor = 'fff',
-            fontsize = '24',
-            borderColor = '#004A4D',
+        var bgColor = '#ffb473',
+            textColor = '#006064',
+            fontsize = '28',
+            borderColor = '#006064',
             layer = new Kinetic.Layer();
 
         var questionRect = new Kinetic.Rect({
@@ -21,7 +21,7 @@ var KineticRender = function (stage) {
             height: height,
             fill: bgColor,
             stroke: borderColor,
-            cornerRadius: 5
+            lineWidth: 5
         });
 
         var questionText = new Kinetic.Text({
@@ -52,7 +52,7 @@ var KineticRender = function (stage) {
             specialTextColor = '#DAA520',
             standardTextColor = '#01C3CD',
             standardBackgroundColor = '#1D7074',
-            standardBorderColor = '#015F5E';
+            standardBorderColor = '#006064';
         var layer = new Kinetic.Layer();
         for (var i = 0; i < rows; i++) {
             rows = rows | 0;
