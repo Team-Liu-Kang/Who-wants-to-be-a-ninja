@@ -1,4 +1,4 @@
-﻿var KineticRenderForCorrectAnswer = function (stage) {
+var KineticRenderForCorrectAnswer = function (stage) {
     var stage = stage;
     var layer = new Kinetic.Layer();
     var correctAnswer = function (strCorrectAnswerDescription) {
@@ -14,29 +14,29 @@
             y: 150,
             width: 500,
             height: 300,
-            fill: '#00FF33',
-            stroke: 'darkgreen',
-            strokeWidth: 2,
+            fill: '#ff9840',
+            stroke: '#004a4d',
+            strokeWidth: 3,
             opacity: 1
         });
 
         var corectAnswerText = new Kinetic.Text({
             x: 150,
             y: 200,
-            text: 'Answer Correct !',
-            fontSize: 35,
-            fontFamily: 'Calibri',
+            text: 'Answer Correct!',
+            fontSize: 45,
+            fontFamily: 'Arial',
             width: 500,
             align: 'center',
-            fill: 'red',
+            fill: '#004a4d',
         });
 
         var corectAnswerDescriptionText = new Kinetic.Text({
             x: 150,
-            y: 240,
+            y: 300,
             text: strCorrectAnswerDescription,
-            fontSize: 20,
-            fontFamily: 'Calibri',
+            fontSize: 30,
+            fontFamily: 'Arial',
             width: 500,
             align: 'center',
             fill: '#1D7074',
@@ -47,18 +47,19 @@
             y: 500,
             width: 300,
             height: 70,
-            fill: 'green',
-            stroke: 'black',
-            strokeWidth: 5,
+            fill: '#004a4d',         
+            fontStyle: 'bold',
+            stroke: '#004a4d',
+            strokeWidth: 5
         });
 
         var nextQuestionText = new Kinetic.Text({
-            x: 270,
-            y: 505,
+            x: 275,
+            y: 510,
             text: 'Next Question',
-            fontSize: 35,
-            fontFamily: 'Calibri',
-            fill: 'yellow',
+            fontSize: 26,
+            fontFamily: 'Arial',
+            fill: '#ff9840',
             width: 250,
             padding: 10,
             align: 'center'
@@ -77,11 +78,11 @@
             $('#container').fadeIn(1000);
         })
         nextQuestionInvisible.on('mouseover', function () {
-            nextQuestion.fill('black');
+            nextQuestion.fill('#1D7074');
             layer.draw();
         })
         nextQuestionInvisible.on('mouseout', function () {
-            nextQuestion.fill('red');
+            nextQuestion.fill('#004a4d');
             layer.draw();
         })
         layer.add(nextQuestion, nextQuestionText, nextQuestionInvisible, corectAnswerBox, corectAnswerText, corectAnswerDescriptionText);
@@ -102,8 +103,8 @@
             y: 150,
             width: 500,
             height: 300,
-            fill: 'orange',
-            stroke: 'red',
+            fill: '#ff9840',
+            stroke: '#004a4d',
             strokeWidth: 2,
             align: 'center',
             opacity: 1
@@ -112,20 +113,20 @@
         var incorectAnswerText = new Kinetic.Text({
             x: 150,
             y: 200,
-            text: 'Incorrect Answer !',
-            fontSize: 35,
-            fontFamily: 'Calibri',
-            width: 500,
-            align: 'center',
+            text: 'Incorrect Answer!',
+            fontSize: 45,
+            fontFamily: 'Arial',
             fill: 'red',
+            width: 500,
+            align: 'center'
         });
 
         var incorectAnswerDescriptionText = new Kinetic.Text({
             x: 150,
-            y: 240,
+            y: 300,
             text: strIncorrectAnswerDescription,
-            fontSize: 20,
-            fontFamily: 'Calibri',
+            fontSize: 30,
+            fontFamily: 'Arial',
             width: 500,
             align: 'center',
             fill: '#1D7074',
@@ -136,18 +137,19 @@
             y: 500,
             width: 300,
             height: 70,
-            fill: 'red',
-            stroke: 'black',
+            fill: '#004a4d',
+            stroke: '#004a4d',
             strokeWidth: 5,
         });
 
         var nextQuestionText = new Kinetic.Text({
-            x: 270,
-            y: 505,
-            text: 'New Game',
-            fontSize: 35,
-            fontFamily: 'Calibri',
-            fill: 'yellow',
+            x: 275,
+            y: 510,
+            text: 'Back to Menu',
+            fontSize: 26,
+            fontFamily: 'Arial',
+            fill: '#ff9840',
+            fontStyle: 'bold',
             width: 250,
             padding: 10,
             align: 'center'
@@ -165,11 +167,11 @@
             location.reload();
         })
         nextQuestionInvisible.on('mouseover', function () {
-            nextQuestion.fill('black');
+            nextQuestion.fill('#1D7074');
             layer.draw();
         })
         nextQuestionInvisible.on('mouseout', function () {
-            nextQuestion.fill('red');
+            nextQuestion.fill('#004a4d');
             layer.draw();
         })
 
