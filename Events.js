@@ -5,3 +5,6 @@
 $('#leaderboard-button').on('click', function () {
     $('#leaderboard-screen').fadeIn(1000);
 })
+$('#leaderboard-back-button').on('click', function () {
+    $('#leaderboard-screen').fadeOut(1000);
+})
