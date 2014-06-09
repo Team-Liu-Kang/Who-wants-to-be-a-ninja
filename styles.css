@@ -24,6 +24,10 @@ div.canvas-div{
   top:10px;
   left:10px;
 }
+#leaderboard-screen{
+z-index:4;
+display: none;
+}
 #container{
     z-index:2;
 }
@@ -75,8 +79,4 @@ z-index:3;
   height: 600px;
   display: none;
 }
-#wrapper #leaderboard-screen {
-  width: 800px;
-  height: 600px;
-  display: none;
-}
+
