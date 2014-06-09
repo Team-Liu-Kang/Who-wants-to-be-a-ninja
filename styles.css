@@ -32,7 +32,7 @@ display: none;
 #leaderboard-screen ul {
     list-style-type: none;
     position: relative;
-    top: 130px;
+    top: 120px;
     color: #004a4d;
     font-size: 45px;
     font-weight: bold;
@@ -45,6 +45,32 @@ display: none;
     margin-right: 40px;
     border: 3px solid #004a4d;
     background-color: #ff9840;
+}
+
+#leaderboard-screen button {
+    position: absolute;
+    width: 310px;
+    height: 50px;
+    border: none;
+    font-family: arial;
+    font-size: 26px;
+    font-weight: bold;
+    color: #ff9840;
+    margin-bottom: 15px;
+    background-color: #004a4d;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .2s;
+    bottom: 5px;
+    left: 230px;
+}
+
+#leaderboard-screen button:hover {
+    border: 2px solid #004a4d;
+    background-color: #ff9840;
+    color: #004a4d;
 }
 
 #container{
