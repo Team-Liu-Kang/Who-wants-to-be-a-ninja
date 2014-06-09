@@ -5,13 +5,13 @@ var KineticRender = function (stage) {
 
     var drawQuestionBox = function (x, y, width, height, strQuestion) {
         if (strQuestion === undefined) {
-            strQuestion = 'Some question?'
+            strQuestion = 'Some question?';
         }
 
         var bgColor = '#ffb473',
             textColor = '#006064',
             fontsize = '28',
-            borderColor = '#006064',
+            borderColor = '#004a4d',
             layer = new Kinetic.Layer();
 
         var questionRect = new Kinetic.Rect({
@@ -21,6 +21,7 @@ var KineticRender = function (stage) {
             height: height,
             fill: bgColor,
             stroke: borderColor,
+            strokeWidth: 5,
             lineWidth: 5
         });
 
@@ -39,7 +40,7 @@ var KineticRender = function (stage) {
 
         layer.add(questionRect, questionText);
         stage.add(layer);
-    }
+    };
 
     var drawRightPanel = function (x, y, width, height, rows, startPoints, selectedRow) {
         var singleRowHeight = height / rows,
@@ -52,7 +53,7 @@ var KineticRender = function (stage) {
             specialTextColor = '#DAA520',
             standardTextColor = '#01C3CD',
             standardBackgroundColor = '#1D7074',
-            standardBorderColor = '#006064';
+            standardBorderColor = '#004a4d';
         var layer = new Kinetic.Layer();
         for (var i = 0; i < rows; i++) {
             rows = rows | 0;
@@ -67,7 +68,7 @@ var KineticRender = function (stage) {
             }
         }
         stage.add(layer);
-    }
+    };
 
     var drawRightPanelRow = function (x, y, width, height, rowNumber, rowPoints, fontSize, textColor, backgroundColor, borderColor , layer) {
         var backgroundRectangle = new Kinetic.Rect({
@@ -125,7 +126,7 @@ var KineticRender = function (stage) {
         layer.add(backgroundRectangle, leftRectangle, leftTextField, rightRectangle, rightTextField);
 
         
-    }
+    };
 
     var drawAnswersBox = function (x, y, width, height, arrOfStrings, onClickFunc) {
         var singleAnswerWidth = (width / 2) - 20,
@@ -158,7 +159,7 @@ var KineticRender = function (stage) {
                 index++;
             }
         }
-    }
+    };
 
     var drawAnswer = function (x, y, width, height, text, fontSize, rectID , onClickFunc) {
 
@@ -169,8 +170,7 @@ var KineticRender = function (stage) {
             height: height,
             fill: '#FF9841',
             stroke: '#226F77',
-            strokeWidth: 2,
-            cornerRadius: 15
+            strokeWidth: 2
         });
 
         var textField = new Kinetic.Text({
@@ -178,7 +178,8 @@ var KineticRender = function (stage) {
             y: y,
             text: text,
             fontSize: fontSize,
-            fontFamily: 'Calibri',
+            fontFamily: 'Arial',
+            fontStyle: 'bold',
             fill: '#226F77',
             width: rectangle.width() - 20,
             height: rectangle.height() - 20,
@@ -220,11 +221,11 @@ var KineticRender = function (stage) {
         layer.add(rectangle, textField, rectangleContainer);
 
         stage.add(layer);
-    }
+    };
 
     return {
         drawRightPanel: drawRightPanel,
         drawAnswersBox: drawAnswersBox,
         drawQuestionBox: drawQuestionBox
-    }
-}
+    };
+};
