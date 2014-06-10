@@ -1,9 +1,13 @@
 function muteAudio() {
-    document.getElementById('audio').muted = !document.getElementById('audio').muted;
+    var audio =  document.getElementById('audio');
+    audio.muted = !audio.muted;
+    var icon = document.getElementById('sound-icon');
     var btnAudio = document.getElementById('audioControl');
-    if (btnAudio.innerHTML === 'Mute') {
-        btnAudio.innerHTML = 'Unmute';
+    
+    if (audio.muted === false) {
+        icon.src = 'images/unmuted.png';
     } else {
-        btnAudio.innerHTML = 'Mute'
+        icon.src = 'images/muted.png';
     }
+    
 }
