@@ -4,6 +4,6 @@ function muteAudio() {
     if (btnAudio.innerHTML === 'Mute') {
         btnAudio.innerHTML = 'Unmute';
     } else {
-        btnAudio.innerHTML = 'Mute'
+        btnAudio.innerHTML = ' Mute '
     }
 }
