@@ -10,6 +10,10 @@ html {
   overflow: hidden;
 }
 
+body {
+ background-image: url('images/background.png');
+}
+
 svg{
     z-index:2;
 }
