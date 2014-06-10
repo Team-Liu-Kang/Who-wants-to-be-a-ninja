@@ -59,7 +59,7 @@ var KineticRender = function (stage) {
             rows = rows | 0;
             if (selectedRow === rows - i) {
                 drawRightPanelRow(x, y + (singleRowHeight * i), width, singleRowHeight, rows - i, topRowPoints - (i * startPoints), 30, selectedTextColor, selectedBacgroundColor, standardBorderColor , layer);
-            } else if ((i === rows - 1 || i === Math.floor((rows - 1) / 2) || i === 0) && selectedRow < rows - i) {
+            } else if ((i === Math.floor(((rows ) / 3) * 2) || i === Math.floor((rows) / 3) || i === 0) && selectedRow < rows - i) {
                 drawRightPanelRow(x, y + (singleRowHeight * i), width, singleRowHeight, rows - i, topRowPoints - (i * startPoints), 30, specialTextColor, standardBackgroundColor, standardBorderColor , layer);
             } else if (selectedRow > rows - i) {
                 drawRightPanelRow(x, y + (singleRowHeight * i), width, singleRowHeight, rows - i, topRowPoints - (i * startPoints), 30, passedTextColor, passedBackgroundColor, passedBorderColor,layer);
