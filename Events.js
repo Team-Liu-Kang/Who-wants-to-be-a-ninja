@@ -11,7 +11,7 @@ $('#leaderboard-back-button').on('click', function () {
     $('#leaderboard-screen').fadeOut(1000);
 })
     var isValidField = function (field) {
-        var fieldData = field.val().trim();
+		var fieldData = field.val().trim();
         var isValid = fieldData.length !== 0 && fieldData !== "";
         if (!isValid) {
             alert("Only a certified ninja can become anonymous! Enter your name!");
