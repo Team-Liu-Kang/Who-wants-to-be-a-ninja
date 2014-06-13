@@ -46,15 +46,6 @@
         }
     }
 
-    var isValidField = function (field) {
-        var fieldData = field.value;
-        var isValid = fieldData.length === 0 || fieldData === "";
-        if (isValid) {
-            alert("Only a certified ninja can become anonymous! Enter your name!");
-        }
-        return isValid;
-    }
-
     var nextQuestion= function() {
         drawCurrentAnswer();
     }
