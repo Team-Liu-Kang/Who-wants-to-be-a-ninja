@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -18,16 +18,19 @@
 <div id="answer-state" class="canvas-div"></div>
     <div id="wrapper">
         <div id="start-screen">
+            <div id="input-section">
+                Ninja candidate: <input type="text" id="input-name" name="player-name" autofocus>
+            </div>  
             <button id="new-game-button" class="start-button">New Game</button>
             <br />
-            <button id="leaderboard-button" class="start-button">Leaderboard</button>
-        </div>
+            <button id="leaderboard-button" class="start-button">Leaderboard</button>                    
+        </div>        
         <div id="game-screen">
         </div>
     </div>
     <button onclick="muteAudio()" id="audioControl"><img src="images/unmuted.png" id="sound-icon" /></button>
 	<audio autoplay loop id="audio">
-		<source src="background.mp3" type="audio/mpeg">
+		<source src="background.mp3" type="audio/mpeg"/>
 	</audio>
 	<script src="audio.js"></script>
     <script src="KineticRender.js"></script>

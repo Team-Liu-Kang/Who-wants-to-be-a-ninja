@@ -122,10 +122,11 @@ z-index:3;
   width: 800px;
   height: 600px;
 }
-#wrapper #start-screen .start-button {
+#wrapper #start-screen .start-button,
+#input-section{
   position: relative;
   top: 370px;
-  left: 37px;
+  left: 135px;
   width: 310px;
   height: 75px;
   border: none;
@@ -152,3 +153,14 @@ z-index:3;
   display: none;
 }
 
+#input-section {
+    display: inline-block;
+    position: absolute;
+    top: 250px;
+    left: 40px;
+    width: 500px;
+    height: 65px;
+    padding-top: 30px;
+    vertical-align: middle;
+    text-align:center;
+}
