@@ -2,6 +2,14 @@
 var KineticRender = function (stage) {
     var stage = stage;
     var layer = new Kinetic.Layer();
+	
+	var drawTimerJoker = function(clickHandler){
+	
+	}
+	
+	var drawQuestionJoker = function(clickHandler){
+	
+	}
 
     var drawQuestionBox = function (x, y, width, height, strQuestion) {
         if (strQuestion === undefined) {
@@ -224,6 +232,8 @@ var KineticRender = function (stage) {
     };
 
     return {
+		drawTimerJoker : drawTimerJoker,
+		drawQuestionJoker: drawQuestionJoker,
         drawRightPanel: drawRightPanel,
         drawAnswersBox: drawAnswersBox,
         drawQuestionBox: drawQuestionBox
