@@ -1,4 +1,5 @@
-﻿var GameEngine = function () {
+﻿/// <reference path="C:\Users\Nikki\Desktop\Telerik\Ilian\JavaScriptUIAndDOM\JSTeamWork\JSTeamWork\KineticRenderForCorrectAnswer.js" />
+var GameEngine = function () {
     var WIDTH = 800,
         HEIGHT = 600,
         isTimerJokerUsed = false,
@@ -45,10 +46,16 @@
 
     var whenAnswerIsChoosen = function (rectID) {
         if (rectID == question.correctAnswer) {
-            kineticForCorrectAnswer.correctAnswer(question.description);
-            questionNumber++;
-            question = arrWithQuestions[questionNumber];
-            svgRender.clearPaper();
+            if (questionNumber === 14) {
+                kineticForCorrectAnswer.finalWinScreen();
+                svgRender.clearPaper();
+                addScore(calculatePlayerScore(questionNumber));
+            } else {
+                kineticForCorrectAnswer.correctAnswer(question.description);
+                questionNumber++;
+                question = arrWithQuestions[questionNumber];
+                svgRender.clearPaper();
+            }
         } else {
             kineticForCorrectAnswer.incorrectAnswer(question.description);
             svgRender.clearPaper();
