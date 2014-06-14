@@ -12,6 +12,7 @@ var KineticRender = function (stage) {
                 width: width,
                 height: height,
             });
+            layer.add(backgroundRectForColor, timerRectangle, timerContainer);
             layer.draw();  
         }
         timeJokerBackgroundImage.src = imgSrc;
@@ -60,7 +61,7 @@ var KineticRender = function (stage) {
             backgroundRectForColor.fill('#1D7074');
             layer.draw();
         });        
-        layer.add(backgroundRectForColor, timerRectangle, timerContainer);
+
     };
 
     var drawQuestionBox = function (x, y, width, height, strQuestion) {
