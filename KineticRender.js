@@ -65,17 +65,31 @@ var KineticRender = function (stage) {
         var layer = new Kinetic.Layer();
         for (var i = 0; i < rows; i++) {
             rows = rows | 0;
-            if (selectedRow === rows - i) {
+            if (isCurrentRow(rows, i, selectedRow) {
                 drawRightPanelRow(x, y + (singleRowHeight * i), width, singleRowHeight, rows - i, topRowPoints - (i * startPoints), 30, selectedTextColor, selectedBacgroundColor, standardBorderColor , layer);
-            } else if ((i === Math.floor(((rows ) / 3) * 2) || i === Math.floor((rows) / 3) || i === 0) && selectedRow < rows - i) {
+            } else if (isThreshholdRow(rows, i, selectedRow)) {
                 drawRightPanelRow(x, y + (singleRowHeight * i), width, singleRowHeight, rows - i, topRowPoints - (i * startPoints), 30, specialTextColor, standardBackgroundColor, standardBorderColor , layer);
-            } else if (selectedRow > rows - i) {
+            } else if (isPassedRow(rows, i, selectedRow)) {
                 drawRightPanelRow(x, y + (singleRowHeight * i), width, singleRowHeight, rows - i, topRowPoints - (i * startPoints), 30, passedTextColor, passedBackgroundColor, passedBorderColor,layer);
             } else {
+                // draw rows that are not yet passed
                 drawRightPanelRow(x, y + (singleRowHeight * i), width, singleRowHeight, rows - i, topRowPoints - (i * startPoints), 30, standardTextColor, standardBackgroundColor, standardBorderColor,layer);
             }
         }
+
         stage.add(layer);
+
+        function isThreshholdRow(rows, i, selectedRow) {
+            return ((i === Math.floor(((rows ) / 3) * 2) || i === Math.floor((rows) / 3) || i === 0) && selectedRow < rows - i);
+        }
+
+        function isCurrentRow(rows, i, selectedRow) {
+            return (selectedRow === rows - i);
+        }
+
+        function isPassedRow(rows, i, selectedRow) {
+            return (selectedRow > rows - i);
+        }
     };
 
     var drawRightPanelRow = function (x, y, width, height, rowNumber, rowPoints, fontSize, textColor, backgroundColor, borderColor , layer) {
