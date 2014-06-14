@@ -47,8 +47,8 @@ var GameEngine = function () {
     var whenAnswerIsChoosen = function (rectID) {
         if (rectID == question.correctAnswer) {
             if (questionNumber === 14) {
-                kineticForCorrectAnswer.finalWinScreen();
                 svgRender.clearPaper();
+                kineticForCorrectAnswer.finalWinScreen();
                 addScore(calculatePlayerScore(questionNumber));
             } else {
                 kineticForCorrectAnswer.correctAnswer(question.description);
