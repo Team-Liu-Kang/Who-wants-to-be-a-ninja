@@ -2,25 +2,35 @@
 var KineticRender = function (stage) {
     var stage = stage;
     var layer = new Kinetic.Layer();
-	
-    var drawTimerJoker = function (x, y, width, height, onClickFunc) {
 
-        var stopTimerImage = new Kinetic.Image({
-            x: 0,
-            y: 0,
-            width: 300,
-            height: 120
-        });
-        stopTimerImage.src = 'images/stop_timer.png';
-
+    var drawJoker = function (x, y, width, height, imgSrc , onClickFunc) {
+        var timeJokerBackgroundImage = new Image();
+        timeJokerBackgroundImage.onload = function () {
+            stopTimerImage = new Kinetic.Image({
+                x: x,
+                y: y,
+                width: width,
+                height: height,
+            });
+            layer.draw();  
+        }
+        timeJokerBackgroundImage.src = imgSrc;
         var timerRectangle = new Kinetic.Rect({
             x: x,
             y: y,
             width: width,
             height: height,
-            fillPatternImage: stopTimerImage,
-            stroke: '#226F77',
-            strokeWidth: 2
+            fillPatternImage: timeJokerBackgroundImage,
+            stroke: '#004a4d',
+            strokeWidth: 3
+        });
+
+        var backgroundRectForColor = new Kinetic.Rect({
+            x: x,
+            y: y,
+            width: width,
+            height: height,
+            fill: '#1D7074',
         });
 
         var timerContainer = new Kinetic.Rect({
@@ -34,67 +44,23 @@ var KineticRender = function (stage) {
         timerContainer.on('click', function () {
             timerContainer.off('mouseover');
             timerContainer.off('mouseout');
-            layer.draw();
+            timerContainer.off('click');
             onClickFunc();
+            timerRectangle.opacity('0.2');
+            backgroundRectForColor.fill('#1D7074');
+            layer.draw();
+
         });
 
         timerContainer.on('mouseover', function () {
-            timerRectangle.stroke('#FF9841');
+            backgroundRectForColor.fill('#CDCC00');
             layer.draw();
         });
         timerContainer.on('mouseout', function () {
-            timerRectangle.stroke('#226F77');
+            backgroundRectForColor.fill('#1D7074');
             layer.draw();
         });        
-
-        stage.add(layer);
-    };
-	
-    var drawQuestionJoker = function (x, y, width, height, onClickFunc) {
-
-        var changeQuestionImage = new Kinetic.Image({
-            x: 0,
-            y: 0,
-            width: 300,
-            height: 120
-        });
-        changeQuestionImage.src = 'images/change_question.png.png';
-
-        var changeQuestionRectangle = new Kinetic.Rect({
-            x: x,
-            y: y,
-            width: width,
-            height: height,
-            fillPatternImage: stopTimerImage,
-            stroke: '#226F77',
-            strokeWidth: 2
-        });
-
-        var changeQuestionContainer = new Kinetic.Rect({
-            x: x,
-            y: y,
-            width: width,
-            height: height,
-            opacity: 0,
-        });
-
-        changeQuestionContainer.on('click', function () {
-            changeQuestionContainer.off('mouseover');
-            changeQuestionContainer.off('mouseout');
-            layer.draw();
-            onClickFunc();
-        });
-
-        changeQuestionContainer.on('mouseover', function () {
-            changeQuestionRectangle.stroke('#FF9841');
-            layer.draw();
-        });
-        changeQuestionContainer.on('mouseout', function () {
-            changeQuestionRectangle.stroke('#226F77');
-            layer.draw();
-        });
-
-        stage.add(layer);
+        layer.add(backgroundRectForColor, timerRectangle, timerContainer);
     };
 
     var drawQuestionBox = function (x, y, width, height, strQuestion) {
@@ -332,8 +298,7 @@ var KineticRender = function (stage) {
     };
 
     return {
-		drawTimerJoker : drawTimerJoker,
-		drawQuestionJoker: drawQuestionJoker,
+        drawJoker : drawJoker,
         drawRightPanel: drawRightPanel,
         drawAnswersBox: drawAnswersBox,
         drawQuestionBox: drawQuestionBox

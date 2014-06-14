@@ -26,8 +26,12 @@
         progressLevel.stop();
         paper.remove();
     }
+    function pauseTimer() {
+        progressLevel.pause();
+    }
     return {
         startProgressBar: startProgressBar,
-        clearPaper: clearPaper
+        clearPaper: clearPaper,
+        pauseTimer: pauseTimer
     }
 }

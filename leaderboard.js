@@ -1,4 +1,3 @@
-(function() {
     var LEADERBOARD_KEY = 'key';
 
     if (localStorage.getItem(LEADERBOARD_KEY) == null) {
@@ -71,7 +70,8 @@
         return leaderboardJson;
     }
 
-    function addScore(name, score) {
+    function addScore(score) {
+        var name = $('#input-name').val();
         var currPlayer = {
             name: name,
             score: score
@@ -102,4 +102,3 @@
 
         localStorage.setItem(LEADERBOARD_KEY, JSON.stringify(newLeaderboard));
     }
-})();
