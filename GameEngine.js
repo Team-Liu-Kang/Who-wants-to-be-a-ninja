@@ -26,7 +26,7 @@
     var question = arrWithQuestions[questionNumber];
     var svgRender = new SvgRender();
     var drawCurrentAnswer = function (question) {
-        svgRender.startProgressBar(whenAnswerIsChoosen);
+        setTimeout(function () { svgRender.startProgressBar(whenAnswerIsChoosen); }, 1000);
         var arrayWithAnswer = [];
         arrayWithAnswer.push(question.answerA);
         arrayWithAnswer.push(question.answerB);
