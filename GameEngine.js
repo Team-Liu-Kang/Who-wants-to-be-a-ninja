@@ -32,6 +32,8 @@
         kineticRender.drawRightPanel(600, 40, 200, 560, 15, 100, questionNumber+1);
         kineticRender.drawAnswersBox(10, 470, 600, 150, arrayWithAnswer, whenAnswerIsChoosen);
         kineticRender.drawQuestionBox(20, 120, 560, 230, question.question);
+        kineticRender.drawTimerJoker(580, 4, 100, 40, whenTimerIsStopped);
+        kineticRender.drawQuestionJoker(700, 4, 100, 40, whenQuestionIsChanged);
     }
 
     var whenAnswerIsChoosen = function (rectID) {
@@ -44,6 +46,14 @@
             kineticForCorrectAnswer.incorrectAnswer(question.description);
             svgRender.clearPaper();
         }
+    }
+
+    var whenTimerIsStopped = function () {
+        return;
+    }
+
+    var whenQuestionIsChanged = function () {
+        return;
     }
 
     var nextQuestion= function() {

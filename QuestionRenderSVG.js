@@ -80,4 +80,3 @@ var renderQuestion = function (containerID, xPos, yPos, width, height, textConte
 
 // Just for testing
 renderQuestion('svg-container', 130, 110, 400, 200, 'Text Content Text');
-

@@ -3,13 +3,99 @@ var KineticRender = function (stage) {
     var stage = stage;
     var layer = new Kinetic.Layer();
 	
-	var drawTimerJoker = function(clickHandler){
+    var drawTimerJoker = function (x, y, width, height, onClickFunc) {
+
+        var stopTimerImage = new Kinetic.Image({
+            x: 0,
+            y: 0,
+            width: 300,
+            height: 120
+        });
+        stopTimerImage.src = 'images/stop_timer.png';
+
+        var timerRectangle = new Kinetic.Rect({
+            x: x,
+            y: y,
+            width: width,
+            height: height,
+            fillPatternImage: stopTimerImage,
+            stroke: '#226F77',
+            strokeWidth: 2
+        });
+
+        var timerContainer = new Kinetic.Rect({
+            x: x,
+            y: y,
+            width: width,
+            height: height,
+            opacity: 0,
+        });
+
+        timerContainer.on('click', function () {
+            timerContainer.off('mouseover');
+            timerContainer.off('mouseout');
+            layer.draw();
+            onClickFunc();
+        });
+
+        timerContainer.on('mouseover', function () {
+            timerRectangle.stroke('#FF9841');
+            layer.draw();
+        });
+        timerContainer.on('mouseout', function () {
+            timerRectangle.stroke('#226F77');
+            layer.draw();
+        });        
+
+        stage.add(layer);
+    };
 	
-	}
-	
-	var drawQuestionJoker = function(clickHandler){
-	
-	}
+    var drawQuestionJoker = function (x, y, width, height, onClickFunc) {
+
+        var changeQuestionImage = new Kinetic.Image({
+            x: 0,
+            y: 0,
+            width: 300,
+            height: 120
+        });
+        changeQuestionImage.src = 'images/change_question.png.png';
+
+        var changeQuestionRectangle = new Kinetic.Rect({
+            x: x,
+            y: y,
+            width: width,
+            height: height,
+            fillPatternImage: stopTimerImage,
+            stroke: '#226F77',
+            strokeWidth: 2
+        });
+
+        var changeQuestionContainer = new Kinetic.Rect({
+            x: x,
+            y: y,
+            width: width,
+            height: height,
+            opacity: 0,
+        });
+
+        changeQuestionContainer.on('click', function () {
+            changeQuestionContainer.off('mouseover');
+            changeQuestionContainer.off('mouseout');
+            layer.draw();
+            onClickFunc();
+        });
+
+        changeQuestionContainer.on('mouseover', function () {
+            changeQuestionRectangle.stroke('#FF9841');
+            layer.draw();
+        });
+        changeQuestionContainer.on('mouseout', function () {
+            changeQuestionRectangle.stroke('#226F77');
+            layer.draw();
+        });
+
+        stage.add(layer);
+    };
 
     var drawQuestionBox = function (x, y, width, height, strQuestion) {
         if (strQuestion === undefined) {
@@ -65,7 +151,7 @@ var KineticRender = function (stage) {
         var layer = new Kinetic.Layer();
         for (var i = 0; i < rows; i++) {
             rows = rows | 0;
-            if (isCurrentRow(rows, i, selectedRow) {
+            if (isCurrentRow(rows, i, selectedRow)) {
                 drawRightPanelRow(x, y + (singleRowHeight * i), width, singleRowHeight, rows - i, topRowPoints - (i * startPoints), 30, selectedTextColor, selectedBacgroundColor, standardBorderColor , layer);
             } else if (isThreshholdRow(rows, i, selectedRow)) {
                 drawRightPanelRow(x, y + (singleRowHeight * i), width, singleRowHeight, rows - i, topRowPoints - (i * startPoints), 30, specialTextColor, standardBackgroundColor, standardBorderColor , layer);
